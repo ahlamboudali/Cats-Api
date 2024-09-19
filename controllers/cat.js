@@ -26,14 +26,14 @@ const catControllers = {
         const { name, age } = req.body;
         if (!name || !age) {
             res.status(400).send('Please provide name and age');
+        } else {
+            const newCat = {id : String(cats.length+1), name, age};
             cats.push(newCat);
-            res.status(201).json(newCat);
+            res.status(201).json(newCat)
         }
     },
     updateCat: (req, res) => {},
     deleteCat: (req, res) => {},
-
 };
-
-export default catControllers; 
+export default catControllers;
 
